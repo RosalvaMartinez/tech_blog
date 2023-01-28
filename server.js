@@ -10,6 +10,8 @@ app.engine('handlebars', expressHandlebars.engine(
     {defaultLayout: 'main'}
 ));
 
+app.use(express.static('public'));
+
 app.set('view engine', 'handlebars');
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`)
