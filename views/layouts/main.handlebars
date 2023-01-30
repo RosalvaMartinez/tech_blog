@@ -11,20 +11,21 @@
 
 <body>
   <div>
-    <header>
-      <h1>
-        <a href="/">Tech Blog</a>
+    <header class="hero">
+      <h1 class="app-title">
+        <a href="/">The Tech Blog</a>
       </h1>
       <nav>
         <div>
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/profile">Dashboard</a> |
         <a href="/" id="logout">Logout</a>
         </div>
         <div>
         {{else}}
-        <a href="/login">profile</a> |
-        <a href="/login">login</a>
+        <a href="/login">Home</a> |
+        <a href="/login">Dashboard</a> |
+        <a href="/login">Login</a>
         </div>
         {{/if}}
       </nav>
