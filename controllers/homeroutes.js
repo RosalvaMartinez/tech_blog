@@ -18,7 +18,7 @@
 
 
 const router = require('express').Router();
-const { Post, User, Comments } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -57,6 +57,11 @@ router.get('/post/:id', async (req, res) => {
                     model: User,
                     attributes: ['name'],
                 },
+                // {
+                //     model: Comment,
+                //     attributes: ['comment'],
+
+                // }
             ],
         });
 
@@ -81,7 +86,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-
+        console.log(user)
         res.render('dashboard', {
             ...user,
             logged_in: true
